@@ -1,2 +1,1 @@
-# dojo
-Dentsu Creative Dojo
+# React + Vite + ThreeJS
