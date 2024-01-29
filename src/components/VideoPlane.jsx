@@ -8,7 +8,7 @@ export default function VideoPlane(props) {
     const size = useAspect(1920, 1080)
     return (
         <mesh {...props}>
-            <planeGeometry args={[1.92, 1.08, 4, 4]} />
+            <planeGeometry args={[1.92, 1.08]} />
             <Suspense fallback={<FallbackMaterial url={fallbackURL} />}>
                 <VideoMaterial url={url} />
             </Suspense>
