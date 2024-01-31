@@ -2,6 +2,7 @@ import { Suspense, useRef } from "react"
 import { Canvas } from "@react-three/fiber"
 import { Environment, Loader} from "@react-three/drei"
 import gsap from "gsap"
+
 // import { useGLTF, Float, Lightformer, Text, Html, ContactShadows, Environment, MeshTransmissionMaterial } from "@react-three/drei"
 // import { EffectComposer, N8AO, TiltShift2 } from "@react-three/postprocessing"
 
@@ -24,18 +25,14 @@ export default function Hero() {
           <Suspense fallback={null}>
             
             <Environment background={false} files={"photo_studio_01_512kb.hdr"} />
-            <VideoPlane position={[0,0,0]} scale={3}/>
+            <VideoPlane position={[0,0,-1]} scale={4}/>
 
-            
-            <DojoGlassText position={[0,0,2]} scale={0.5}/>
+            <DojoGlassText position={[0,0,1]} scale={0.5}/>
               
           </Suspense>
-                    
           {/* <OrbitControls /> */}
         </Canvas>
         <Loader />
-
-        
 
         <div className="overlay">
           <Logo />

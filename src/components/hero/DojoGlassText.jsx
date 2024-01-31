@@ -2,6 +2,10 @@ import { useGSAP } from "@gsap/react"
 import { useGLTF, Float } from "@react-three/drei"
 import {gsap, Power2} from "gsap"
 import { useRef } from "react"
+import { useFrame, useThree,  } from "@react-three/fiber"
+import { useMouse } from "../../hooks/UseMouse"
+import { Vector3 } from "three"
+
 
 // import { useControls } from "leva"
 
@@ -33,7 +37,6 @@ export default function DojoGlassText(props) {
     attenuationDistance: 0.01
   }
 
-
   const Segment = (props) => {
     return (
       <mesh geometry={nodes.segment.geometry} {...props} >
@@ -45,22 +48,22 @@ export default function DojoGlassText(props) {
     count: 20,
     angles: new Array(20),
     angle: 0,
-    radius: 1
+    radius: 2
   }
   segments.angle = (Math.PI * 2) / segments.count
   for (let i = 0; i < segments.count; ++i) {
     segments.angles.push(i * segments.angle)
   }
 
+  const glassText = useRef()
   const dojoDJO = useRef();
   const dojoO = useRef();
-  // const dojoJO = useRef();
   const timeline = new gsap.timeline()
+  
 
   useGSAP(() => {
     // gsap code here...
     dojoO.current.children.map((child, i) => {
-      console.log(child)
       if(child.position)
         timeline.from(child.position, {
           duration: 1.5, 
@@ -70,7 +73,12 @@ export default function DojoGlassText(props) {
         }, i * (0.5 / segments.count))
         timeline.from(child.scale, {
           duration: 1.5, 
-          x: 0, y: 0, z: 0,
+          x: 0, z: 0,
+          ease: Power2.easeInOut
+        }, i * (0.5 / segments.count))
+        timeline.from(child.scale, {
+          duration: 1.5, 
+          y: 3,
           ease: Power2.easeInOut
         }, i * (0.5 / segments.count))
     })
@@ -82,13 +90,31 @@ export default function DojoGlassText(props) {
           ease: Power2.easeInOut
         }, 1 + i * 0.25)
         timeline.from(child.scale, {
-          duration: 1.5,
+          duration: 1,
+          x: 0,
           y: 0,
+          
           ease: Power2.easeOut
         }, 1 + i * 0.25)
     })
-
   }, { scope: dojoO.current });
+
+
+  function Rig() {
+    const { normalisedPosition } = useMouse()
+    const { camera } = useThree()
+    const vec = new Vector3()
+  
+    return useFrame(() => {
+      // console.log(glassText)
+      if(glassText.current)
+        // console.log(glassText.current.rotation)
+        glassText.current.rotation.y = normalisedPosition.x * 0.3
+        glassText.current.rotation.x = normalisedPosition.y * 1
+        
+    })
+  }
+
 
   return (
     <>
@@ -98,7 +124,7 @@ export default function DojoGlassText(props) {
         rotationIntensity={0.4}
         floatingRange={[0, 0.3]}
       >
-        <group {...props}>
+        <group ref={glassText} {...props}>
           
           <group ref={dojoO} position={[-0.6, 0, 0]}>
             {segments.angles.map((angle, i) => {
@@ -120,6 +146,7 @@ export default function DojoGlassText(props) {
           </group>
         </group>
       </Float>
+      <Rig />
     </>
   )
 }

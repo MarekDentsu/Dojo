@@ -2,7 +2,8 @@ import React from 'react'
 import { Suspense } from 'react'
 import { useAspect, useVideoTexture, useTexture } from '@react-three/drei'
 
-import url from "../../assets/3002088_Dojo_Reel.mp4";
+// import url from "../../assets/3002088_Dojo_Reel.mp4";
+// import url from "Dojo_Reel_Short.mp4";
 import fallbackURL from "../../assets/3002088_Dojo_Reel.jpg";
 
 export default function VideoPlane(props) {
@@ -11,7 +12,7 @@ export default function VideoPlane(props) {
         <mesh {...props}>
             <planeGeometry args={[1.92, 1.08]} />
             <Suspense fallback={<FallbackMaterial url={fallbackURL} />}>
-                <VideoMaterial url={url} />
+                <VideoMaterial url={"Dojo_Reel_Short.mp4"} />
             </Suspense>
         </mesh>
     )
