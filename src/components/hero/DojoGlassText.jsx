@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react"
 import { useGLTF, Float } from "@react-three/drei"
-import {gsap, Power2} from "gsap"
+import {gsap, Power2, Back} from "gsap"
 import { useRef } from "react"
 import { useFrame, useThree,  } from "@react-three/fiber"
 import { useMouse } from "../../hooks/UseMouse"
@@ -10,8 +10,9 @@ import { Vector3 } from "three"
 // import { useControls } from "leva"
 
 export default function DojoGlassText(props) {
-  // const { nodes } = useGLTF("/dojo-text-2.glb")
+
   const { nodes } = useGLTF("/dojo-text.glb")
+
   // const materialProps = useControls({
   //   thickness: { value: 0.2, min: 0, max: 20 },
   //   roughness: { value: 0, min: 0, max: 1, step: 0.1 },
@@ -24,6 +25,7 @@ export default function DojoGlassText(props) {
   //   attenuationTint: "#ffe79e",
   //   attenuationDistance: { value: 0.01, min: 0, max: 1 }
   // })
+  
   const materialProps = {
     thickness: 0.5,
     roughness: 0,
