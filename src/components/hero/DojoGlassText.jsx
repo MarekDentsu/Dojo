@@ -1,5 +1,7 @@
+import { useGSAP } from "@gsap/react"
 import { useGLTF, Float } from "@react-three/drei"
 import {gsap, Power2} from "gsap"
+import { useRef } from "react"
 
 // import { useControls } from "leva"
 
@@ -50,7 +52,43 @@ export default function DojoGlassText(props) {
     segments.angles.push(i * segments.angle)
   }
 
-  gsap.to(segments, {duration: 2, radius: 0, ease: Power2.easeInOut})
+  const dojoDJO = useRef();
+  const dojoO = useRef();
+  // const dojoJO = useRef();
+  const timeline = new gsap.timeline()
+
+  useGSAP(() => {
+    // gsap code here...
+    dojoO.current.children.map((child, i) => {
+      console.log(child)
+      if(child.position)
+        timeline.from(child.position, {
+          duration: 1.5, 
+          x: Math.sin(-segments.angle * i) * segments.radius, 
+          y: Math.cos(-segments.angle * i) * segments.radius,
+          ease: Power2.easeInOut
+        }, i * (0.5 / segments.count))
+        timeline.from(child.scale, {
+          duration: 1.5, 
+          x: 0, y: 0, z: 0,
+          ease: Power2.easeInOut
+        }, i * (0.5 / segments.count))
+    })
+    dojoDJO.current.children.map((child, i) => {
+      if(child.position)
+        timeline.from(child.rotation, {
+          duration: 1.5,
+          y: Math.PI * 0.5,
+          ease: Power2.easeInOut
+        }, 1 + i * 0.25)
+        timeline.from(child.scale, {
+          duration: 1.5,
+          y: 0,
+          ease: Power2.easeOut
+        }, 1 + i * 0.25)
+    })
+
+  }, { scope: dojoO.current });
 
   return (
     <>
@@ -61,22 +99,25 @@ export default function DojoGlassText(props) {
         floatingRange={[0, 0.3]}
       >
         <group {...props}>
-          <mesh geometry={nodes.dojoD.geometry} position={[-1.9, 0, 0]} >
-            <meshPhysicalMaterial {...materialProps} />
-          </mesh>
-          <group position={[-0.6, 0, 0]}>
+          
+          <group ref={dojoO} position={[-0.6, 0, 0]}>
             {segments.angles.map((angle, i) => {
               return (
-                <Segment key={"segment" + i} scale={1} position={[Math.sin(-angle) * segments.radius, Math.cos(-angle) * segments.radius, 0]} rotation={[0, 0, angle]} />
+                <Segment key={"segment" + i} scale={1} rotation={[0, 0, angle]} />
               )
             })}
           </group>
-          <mesh geometry={nodes.dojoJ.geometry} position={[0, 0, 0]} >
-            <meshPhysicalMaterial {...materialProps} />
-          </mesh>
-          <mesh geometry={nodes.dojoO.geometry} position={[1.3, 0, 0]} >
-            <meshPhysicalMaterial {...materialProps} />
-          </mesh>
+          <group ref={dojoDJO}>
+            <mesh geometry={nodes.dojoD.geometry} position={[-1.9, 0, 0]} >
+              <meshPhysicalMaterial {...materialProps} />
+            </mesh>
+            <mesh geometry={nodes.dojoJ.geometry} position={[0, 0, 0]} >
+              <meshPhysicalMaterial {...materialProps} />
+            </mesh>
+            <mesh geometry={nodes.dojoO.geometry} position={[1.3, 0, 0]} >
+              <meshPhysicalMaterial {...materialProps} />
+            </mesh>
+          </group>
         </group>
       </Float>
     </>
