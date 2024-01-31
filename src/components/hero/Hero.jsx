@@ -1,6 +1,6 @@
 import { Suspense, useRef } from "react"
 import { Canvas } from "@react-three/fiber"
-import { Environment, Loader, Float} from "@react-three/drei"
+import { Environment, Loader} from "@react-three/drei"
 import gsap from "gsap"
 // import { useGLTF, Float, Lightformer, Text, Html, ContactShadows, Environment, MeshTransmissionMaterial } from "@react-three/drei"
 // import { EffectComposer, N8AO, TiltShift2 } from "@react-three/postprocessing"
@@ -26,14 +26,8 @@ export default function Hero() {
             <Environment background={false} files={"photo_studio_01_512kb.hdr"} />
             <VideoPlane position={[0,0,0]} scale={3}/>
 
-            <Float 
-              speed={1}
-              floatIntensity={1}
-              rotationIntensity={0.3}
-              floatingRange={[0.1,0.2]}
-            >
-              <DojoGlassText position={[0,0,2]} scale={0.5}/>
-            </Float>
+            
+            <DojoGlassText position={[0,0,2]} scale={0.5}/>
               
           </Suspense>
                     
