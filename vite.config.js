@@ -9,12 +9,5 @@ export default defineConfig({
     alias: {
       $fonts: resolve('./public/fonts')
     }
-  },
-  build: {
-    rollupOptions: {
-      external: [
-        /^node:.*/,
-      ]
-    }
   }
 })
