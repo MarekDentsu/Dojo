@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import "./loader.scss"
 import {gsap, Power2, Linear} from 'gsap'
-import { DrawSVGPlugin } from './plugins/gsap/DrawSVGPlugin.js';
+import { DrawSVGPlugin } from '../../plugins/gsap/DrawSVGPlugin.js';
 gsap.registerPlugin(DrawSVGPlugin);
 
 
