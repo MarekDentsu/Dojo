@@ -1,12 +1,11 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { SplitText } from 'gsap/SplitText';
 import Jumbotron from './jumbotron/Jumbotron';
 import Navbar from './Navbar.jsx';
 import Intro from './Intro.jsx';
 import Footer from './Footer.jsx';
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 
 export default function Main(props) {

@@ -1,14 +1,13 @@
 import './scss/index.scss';
 import {gsap, Power2} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { SplitText } from 'gsap/SplitText';
 import { useState, useEffect } from 'react';
 import useResize from './hooks/UseResize.js';
 import Loader from './components/loader/Loader.jsx';
 import Main from './components/Main.jsx';
 import StickyLogo from './components/StickyLogo.jsx';
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 
 function App() {
