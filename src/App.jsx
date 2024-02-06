@@ -1,7 +1,7 @@
 import './scss/index.scss';
 import {gsap, Power2} from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { SplitText } from 'gsap/SplitText';
+import { ScrollTrigger } from './plugins/gsap/ScrollTrigger.js';
+import { SplitText } from './plugins/gsap/SplitText.js';
 import { useState, useEffect } from 'react';
 import useResize from './hooks/UseResize.js';
 import Loader from './components/loader/Loader.jsx';
