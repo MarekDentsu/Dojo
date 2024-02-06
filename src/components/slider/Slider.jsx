@@ -27,9 +27,10 @@ const carousel = {
 
 
 import { gsap, Power2 } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from '../plugins/gsap/ScrollTrigger.js';
+import { SplitText } from '../plugins/gsap/SplitText.js';
 // import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { SplitText } from "gsap/SplitText";
+
 import { useLayoutEffect, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
