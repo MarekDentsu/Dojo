@@ -1,16 +1,54 @@
-import Hero from "./components/hero/Hero";
-import Work from "./components/latest-work/Work";
-import Navbar from "./components/nav/Navbar";
-import Tagline from "./components/tagline/Tagline";
+import './scss/index.scss';
+import {gsap, Power2} from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { SplitText } from 'gsap/SplitText';
+import { useState, useEffect } from 'react';
+import useResize from './hooks/UseResize.js';
+import Loader from './components/loader/Loader.jsx';
+import Main from './components/Main.jsx';
+import StickyLogo from './components/StickyLogo.jsx';
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
-export default function App() {
+
+function App() {
+
+  // states
+  const [isLoading, setLoading] = useState(true)
+  const [isLoaderReady, setLoaderReady] = useState(0)
+
+  // hooks
+  const size = useResize();
+
+  // Simulate, loading
+  useEffect( () => {
+    setTimeout(
+      () => {
+        setLoading(false)
+      }, 2000
+    )
+    setTimeout(
+      () => {
+        setLoaderReady(1)
+      }, 250
+    )
+  }, [] )
   
   return (
     <>
-      <Hero />
-      <Navbar />
-      <Tagline />
-      <Work />
+      {isLoaderReady ? 
+      <div className={"wrapper" + (isLoading ? " absolute overflow-none" : "")}>
+        <Main isLoading={isLoading}/>
+        {(size.width >= 1024)
+          ? 
+            <StickyLogo />
+          : null
+        }
+      </div>
+      : null }
+      <Loader isLoading={isLoading} />
     </>
   )
 }
+
+export default App

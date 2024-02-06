@@ -1,0 +1,47 @@
+.footer{
+    position: relative;
+    height: 100vh;
+
+    margin: 0 -3em;
+    padding: 3em;
+    color: white;
+
+    .content{
+        position: relative;
+        height: 100%;
+    }
+
+    .footer-content{
+        height: calc(100% - 4em);
+        padding: 5em 0;
+
+        h2{
+            margin-bottom: 1em;
+        }
+    }
+
+    ul{
+        bottom: 0;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        justify-content: space-between;
+        width: 60%;
+        overflow-y: hidden;
+        padding: 0 0 0.5em 0;
+
+        li {
+            font-size: 0.8em;
+        }
+    }
+
+    @media only screen and (max-width: 1024px){
+        margin: 0 -1em;
+        padding: 3em 1em;
+
+
+        height: auto;
+        
+    }
+}

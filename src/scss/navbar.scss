@@ -1,35 +1,12 @@
-.navbar-container{
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    width: 100%;
+.navbar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 1em;
+}
 
-
+@media only screen and (max-width: 1024px){
     .navbar{
-        display: flex;
-        position: relative;
-        align-items: center;
-        flex-direction: row;
-
-        top: 0;
-
-        translate: translateY(0%);
-        background-color: white;
-        padding: 1em;
-        width: 100%;
-        transition: translate 0.5s ease-in-out, display 0.5s;
-
-        &.active{
-            display: flex;            
-        }
-        
-        &.hidden{
-            display: none;
-            translate: translate(0,-100%);
-        }
-
-        .dc-logo{
-            height: 50px;
-        }
+        justify-content: space-between;
     }
 }

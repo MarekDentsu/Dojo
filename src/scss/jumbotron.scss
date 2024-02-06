@@ -1,0 +1,27 @@
+.jumbotron{
+    position: relative;
+    aspect-ratio: 16/9;
+
+    .overflow-none{
+        overflow: hidden;   
+    }
+    .video-container{
+        border-radius: 2rem;
+        position: relative;
+
+        video{
+            width: 100%;
+        }
+        .video-overlay{
+            background-color: black;
+            opacity: 0.4;
+        }    
+    }
+
+    .title-content{
+        width: 80%;
+    }
+    button{
+        margin-top: 2em;
+    }
+}

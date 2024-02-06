@@ -1,0 +1,28 @@
+.sticky-logo{
+    position: fixed;
+    top: 4rem;
+    max-width: 200px;
+
+    .sticky{
+        display: flex;
+        flex-flow: column;
+        
+    }
+    // max-width: 200px;
+    color: white;
+
+    img.dc{
+        margin-top: 1rem;
+    }
+
+    h3{
+        margin-top: 1rem;
+        line-height: 0.9;
+        font-weight: 300;
+    }
+
+    p {
+        margin-top: 1rem;
+        font-weight: 300;
+    }
+}

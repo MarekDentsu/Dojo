@@ -1,0 +1,46 @@
+@import url("https://use.typekit.net/dki6dkr.css");
+@import "./vars";
+@import "./common";
+@import "./reset";
+@import "./fonts";
+@import "./buttons";
+@import "./typography";
+@import "./inlineSVG.scss";
+
+@import "./jumbotron";
+@import "./sticky-logo";
+@import "./header";
+@import "./intro";
+@import "./navbar";
+@import "./footer";
+
+
+
+.wrapper{
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+    padding: 1em 3em 0 3em;
+
+    .sticky{
+        position: sticky;
+    }
+}
+
+.content{
+    margin-left: 240px;
+    position: relative;
+}
+
+@media only screen and (max-width: 1024px){
+
+    .content{
+        margin-left: 0;
+        position: relative;
+    }
+
+    .wrapper{
+        padding: 1em 1em 0 1em;
+    }
+
+}
