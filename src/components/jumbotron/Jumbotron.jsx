@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 const VideoBackground = (props) => {
     return(
       <div className="video-container flex-center overflow-none">
-        <video className="video-background" poster={props.poster} autoPlay muted loop>
+        <video className="video-background" poster={props.poster} autoplay loop muted playsinline>
           {props.sources.map( (src, i) => {
             return <source key={"video" + i} src={src} type={"video/" + src.split(".")[1]} />
           })}
