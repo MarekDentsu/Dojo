@@ -1,0 +1,121 @@
+.service-offerings {
+    margin: 2em 0 6em 0;
+
+    .services-card {
+        position: relative;
+
+        background-color: white;
+        border-radius: 2em;
+        color: #191919;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space;
+        align-items: stretch;
+
+        padding: 1em;
+
+        margin-top: 2em;
+
+        h3{
+            margin-bottom: 0.25em;
+        }
+        
+        p, h5{
+            margin-bottom: 1em;
+        }
+
+        .small{
+            font-size: 0.8em;
+            line-height: 2;
+        }
+
+        .icon {
+            position: relative;
+            width: calc(40% - 2em);
+            // min-height: 16vw;
+            height: 22vw;
+            max-height: 15em;
+            text-align: center;
+
+            img {
+                // position: absolute;
+                // width: 100%;
+                // height: 100%;
+                height: 100%;
+            }
+        }
+
+        .description {
+            width: 60%;
+            position: relative;
+            overflow-y: hidden;
+
+            .services-intro,
+            .outcomes{
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            .services-intro {
+                position: relative;
+                top: 0;
+                transition: transform 0.4s ease-in-out;
+            }
+
+            .outcomes {
+                position: absolute;
+                top: 100%;
+                transition: transform 0.4s ease-in-out;
+
+                .up-arrow{
+                    transform: rotate(90deg);
+                    height: 2em;
+                    margin: 0.5em 0 1em 0;
+                }
+
+                ul{
+                    color: #646464;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    list-style: disc;
+
+                    li{
+                        display: inline;
+                        width: 40%;
+                        margin: 0 1em 0.5em 0.5em;
+                        font-weight: 300;
+                    }
+                }
+            }
+
+            // slide up to show details
+            &.show-outcomes{
+                .services-intro {
+                    transform: translateY(-100%)
+                }
+    
+                .outcomes {
+                    transform: translateY(-100%)
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 600px){
+        .services-card{
+            flex-direction: column;
+
+            .icon,
+            .description {
+                width: 100%;
+            }
+
+            .description{
+                height: 12em;
+            }
+        }
+    }
+}

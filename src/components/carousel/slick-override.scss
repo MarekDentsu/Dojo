@@ -11,6 +11,8 @@
 // CARD STYLES
 .carousel-card {
     margin-bottom: 5em;
+    cursor: pointer;
+    
     .card-image {
         height: 28vw;
         max-height: 500px;
@@ -26,14 +28,16 @@
         }
     }
 
-    h5 {
-        color: #646464;
-        margin-bottom: 0.5em;
-    }
+    .description{        
+        h5 {
+            color: #646464;
+            margin-bottom: 0.5em;
+        }
 
-    p{
-        line-height: 1.4;
-        margin-bottom: 1em;
+        p{
+            line-height: 1.4;
+            margin-bottom: 1em;
+        }
     }
 
     @media only screen and (max-width: 1024px){

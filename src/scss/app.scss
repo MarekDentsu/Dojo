@@ -1,18 +1,19 @@
 @import url("https://use.typekit.net/dki6dkr.css");
-@import "./vars";
-@import "./common";
-@import "./reset";
-@import "./fonts";
-@import "./buttons";
-@import "./typography";
-@import "./inlineSVG.scss";
+@import "./_vars";
+@import "./_common";
+@import "./_reset";
+@import "./_fonts";
+@import "./_buttons";
+@import "./_typography";
+@import "./_inlineSVG.scss";
 
-@import "./jumbotron";
-@import "./sticky-logo";
-@import "./header";
-@import "./intro";
-@import "./navbar";
-@import "./footer";
+@import "./_jumbotron";
+@import "./_sticky-logo";
+@import "./_header";
+@import "./_intro";
+@import "./_navbar";
+@import "./_footer";
+@import "./_services";
 
 .wrapper{
     max-width: 1920px;
@@ -40,5 +41,4 @@
     .wrapper{
         padding: 1em 2em 0 2em;
     }
-
 }

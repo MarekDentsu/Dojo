@@ -6,6 +6,7 @@ import Navbar from './Navbar.jsx';
 import Intro from './Intro.jsx';
 import Footer from './Footer.jsx';
 import Carousel from './carousel/Carousel.jsx';
+import ServiceOfferings from './Services/ServiceOfferings.jsx';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 
@@ -28,6 +29,11 @@ export default function Main(props) {
                 <section className="spacer">
                     <div className="content">
                         <Carousel />
+                    </div>
+                </section>
+                <section className="spacer">
+                    <div className="content">
+                        <ServiceOfferings />
                     </div>
                 </section>
             </div>
