@@ -41,5 +41,19 @@ button{
         color: inherit;
         margin: inherit;
         font-size: inherit;
+        
+    }
+
+    &.simple{
+        padding: 0.6em 1em;
+        margin: -0.6em -1em;
+        background-color: transparent;
+        text-decoration: underline;
+
+        &:hover{
+            background-color: white;
+            color: black;
+            text-decoration: none;
+        }
     }
 }

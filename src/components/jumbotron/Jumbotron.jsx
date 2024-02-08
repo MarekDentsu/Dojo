@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 const VideoBackground = (props) => {
     return(
       <div className="video-container flex-center overflow-none">
-        <video className="video-background" poster={props.poster} autoplay loop muted playsinline>
+        <video className="video-background" poster={props.poster} autoPlay loop muted playsInline>
           {props.sources.map( (src, i) => {
             return <source key={"video" + i} src={src} type={"video/" + src.split(".")[1]} />
           })}
@@ -57,7 +57,7 @@ export default function Jumbotron(props) {
     <div className="jumbotron" ref={jumboRef}>
       <VideoBackground sources={[
         "Dojo_Reel_Short.mp4"
-      ]} poster="Dojo_Reel_Short.jpg"/>
+      ]} poster="work/dojo-placeholder-work-00.jpg"/>
       <div className="absolute flex-center">
         <div className="title-content">
           <h1 className="white">

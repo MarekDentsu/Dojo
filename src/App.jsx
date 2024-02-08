@@ -1,4 +1,4 @@
-import './scss/index.scss';
+import './scss/app.scss';
 import {gsap, Power2} from 'gsap';
 import { ScrollTrigger } from './plugins/gsap/ScrollTrigger.js';
 import { SplitText } from './plugins/gsap/SplitText.js';
@@ -24,7 +24,7 @@ function App() {
     setTimeout(
       () => {
         setLoading(false)
-      }, 2000
+      }, 350
     )
     setTimeout(
       () => {

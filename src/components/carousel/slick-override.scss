@@ -1,0 +1,71 @@
+// SLICK OVERRIDES
+.slick-slider {
+    width: calc(100% + 1em);
+    margin-left: -1em;
+}
+
+.slick-slide {
+    padding: 0 1em;
+}
+
+// CARD STYLES
+.carousel-card {
+    margin-bottom: 5em;
+    .card-image {
+        height: 28vw;
+        max-height: 500px;
+        border-radius: 1em;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1em;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+
+    h5 {
+        color: #646464;
+        margin-bottom: 0.5em;
+    }
+
+    p{
+        line-height: 1.4;
+        margin-bottom: 1em;
+    }
+
+    @media only screen and (max-width: 1024px){
+        .card-image {
+            height: 36vw;
+        }
+    }
+    @media only screen and (max-width: 600px){
+        .card-image {
+            height: 60vw;
+        }
+    }
+}
+
+.slick-nav{
+
+    h3{
+        display: inline-block;
+        width: auto;
+    }
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .arrows{
+        .arrow-btn{
+            display: inline-block;
+            margin: 0 1em;
+            img{
+                width: 2em;
+            }
+        }
+    }
+}

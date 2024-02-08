@@ -1,5 +1,6 @@
 body{
-  font-size: 24px;
+  color: white;
+  font-size: 21px;
   line-height: 1;
   font-family: 'StabilGrotesk';
 }
@@ -17,15 +18,28 @@ h3{
 h1, h2{
   font-size: 64px;
   
-  &.white{
-    color: white
-  }
   // text-transform: uppercase;
   // text-align: center;
 }
 
 
 @media only screen and (max-width: 1024px){
+  body{
+    font-size: 2vw;
+  }
+  h4{
+    font-size: 3vw;
+  }
+  h3{
+    font-size: 4vw;
+  }
+  
+  h1, h2{
+    font-size: 6vw
+  }
+}
+
+@media only screen and (max-width: 600px){
   body{
     font-size: 3vw;
   }
@@ -39,9 +53,5 @@ h1, h2{
   h1, h2{
     font-size: 7vw
   }
-}
-
-@media only screen and (max-width: 600px){
-  
 }
 

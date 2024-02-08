@@ -4,6 +4,8 @@
     overflow: hidden;
     user-select: none;
     z-index: 15;
+    position: fixed;
+    top: 0;
 
     .spiral {
         width: 100%;
