@@ -127,7 +127,28 @@
             }
 
             .description {
-                height: 12em;
+                min-height: 12em;
+
+                .services-intro{
+                    padding: 1em 0 2em 0;
+
+                }
+
+                .outcome-nav{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+
+                    h5{
+                        width: 70%;
+                    }
+
+                    .up-arrow{
+                        width: 1.5em;
+                        height: 1.5em;
+                        margin: 0 1em 1em 0;
+                    }
+                }
             }
         }
     }

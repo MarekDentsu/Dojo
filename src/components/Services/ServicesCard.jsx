@@ -6,7 +6,7 @@ export default function ServicesCard(props) {
     const [showOutcomes, setShowOutcomes] = useState(false)
 
     return (
-        <div className='services-card' onClick={()=>{ setShowOutcomes(!showOutcomes) } }>
+        <div className='services-card' onClick={() => { setShowOutcomes(!showOutcomes) }}>
 
             <div className='icon'>
                 <img src={iconURL} alt={title} />
@@ -23,8 +23,10 @@ export default function ServicesCard(props) {
                 </div>
                 <div className="outcomes">
                     <div>
-                        <img className='up-arrow' src={arrowURL} alt="up" />
-                        <h5>Key Outcomes</h5>
+                        <div className='outcome-nav'>
+                            <img className='up-arrow' src={arrowURL} alt="up" />
+                            <h5>Key Outcomes</h5>
+                        </div>
                         <ul>
                             {outcomes.map((outcome, i) => {
                                 return <li key={"outcome-" + i}>{outcome}</li>

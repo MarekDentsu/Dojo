@@ -13,8 +13,6 @@ export default function Intro(props) {
     const size = useResize()
 
     useLayoutEffect(() => {
-        // a gsap.context() lets us use scoped selector text and makes cleanup way easier. See https://greensock.com/docs/v3/GSAP/gsap.context()
-
         if (!props.isLoading) {
             let ctx = gsap.context(() => {
 
@@ -57,7 +55,17 @@ export default function Intro(props) {
                     <div className="intro-copy">
                         <p>We bring together our expertise in design innovation, modern creativity and emerging technologies to create  never before brand experiences.</p>
                         <p>We do this by turning ideas into prototypes, and prototypes into proofs of value that can give brands a competitive advantage.</p>
-                        <button className="white">Watch the video</button>
+                        <button 
+                            className="white"
+                            onClick={
+                                () => {
+                                    if(!props.setModalVideoIsShowing){
+                                        props.setModalVideoIsShowing(true)
+                                        props.setVideoSource("Dojo_Reel_Short.mp4")
+                                    }
+                                }
+                            }   
+                        >Watch the video</button>
                     </div>
                 </div>
             </div>
