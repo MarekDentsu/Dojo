@@ -2,6 +2,7 @@ import { gsap, Power2 } from "gsap";
 import { ScrollTrigger } from '../plugins/gsap/ScrollTrigger.js';
 import { SplitText } from '../plugins/gsap/SplitText.js';
 import { useLayoutEffect, useRef } from "react";
+import useResize from "../hooks/UseResize.js";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 
@@ -9,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 export default function Intro(props) {
 
     const intrtoRef = useRef()
+    const size = useResize()
 
     useLayoutEffect(() => {
         // a gsap.context() lets us use scoped selector text and makes cleanup way easier. See https://greensock.com/docs/v3/GSAP/gsap.context()
@@ -18,25 +20,23 @@ export default function Intro(props) {
 
                 let split = SplitText.create("h2", { type: ["lines", "words"] });
 
-                console.log(split, intrtoRef.current)
-
                 const tl = new gsap.timeline({
                     scrollTrigger: intrtoRef.current,
                     delay: 0.6
                 })
-                .from(split.words, { // <- selector text, scoped to this component!
-                    y: 60,
-                    ease: Power2.easeInOut,
-                    duration: 0.75,
-                    stagger: 0.04,
-                })
-                .from(".intro-copy p, .intro-copy button", { // <- selector text, scoped to this component!
-                    y: 60,
-                    opacity: 0,
-                    ease: Power2.easeOut,
-                    duration: 0.75,
-                    stagger: 0.1
-                }, "-=0.25")
+                    .from(split.words, { // <- selector text, scoped to this component!
+                        y: 60,
+                        ease: Power2.easeInOut,
+                        duration: 0.75,
+                        stagger: 0.04,
+                    })
+                    .from(".intro-copy p, .intro-copy button", { // <- selector text, scoped to this component!
+                        y: 60,
+                        opacity: 0,
+                        ease: Power2.easeOut,
+                        duration: 0.75,
+                        stagger: 0.1
+                    }, "-=0.25")
 
                 return () => split.revert(); // context cleanup
             }, intrtoRef.current); // <- scopes all selector text inside the context to this component (optional, default is document)
@@ -48,9 +48,9 @@ export default function Intro(props) {
         <div className="intro" ref={intrtoRef}>
             <div className="flex-2-col">
                 <div className="left-col">
-                    <h2 className="white">
+                    <h2>
                         We create the <br />
-                        never before.
+                        never before
                     </h2>
                 </div>
                 <div className="right-col">

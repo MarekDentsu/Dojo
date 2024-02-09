@@ -10,22 +10,23 @@
 
         display: flex;
         flex-direction: row;
-        justify-content: space;
+        justify-content: space-between;
         align-items: stretch;
 
         padding: 1em;
 
         margin-top: 2em;
 
-        h3{
+        h3 {
             margin-bottom: 0.25em;
         }
-        
-        p, h5{
+
+        p,
+        h5 {
             margin-bottom: 1em;
         }
 
-        .small{
+        .small {
             font-size: 0.8em;
             line-height: 2;
         }
@@ -47,12 +48,12 @@
         }
 
         .description {
-            width: 60%;
+            width: 65%;
             position: relative;
             overflow-y: hidden;
 
             .services-intro,
-            .outcomes{
+            .outcomes {
                 height: 100%;
                 display: flex;
                 align-items: center;
@@ -69,20 +70,20 @@
                 top: 100%;
                 transition: transform 0.4s ease-in-out;
 
-                .up-arrow{
+                .up-arrow {
                     transform: rotate(90deg);
                     height: 2em;
-                    margin: 0.5em 0 1em 0;
+                    margin: 0.5em 0 0.5em 0;
                 }
 
-                ul{
+                ul {
                     color: #646464;
                     display: flex;
                     flex-direction: row;
                     flex-wrap: wrap;
                     list-style: disc;
 
-                    li{
+                    li {
                         display: inline;
                         width: 40%;
                         margin: 0 1em 0.5em 0.5em;
@@ -92,11 +93,11 @@
             }
 
             // slide up to show details
-            &.show-outcomes{
+            &.show-outcomes {
                 .services-intro {
                     transform: translateY(-100%)
                 }
-    
+
                 .outcomes {
                     transform: translateY(-100%)
                 }
@@ -104,8 +105,20 @@
         }
     }
 
-    @media only screen and (max-width: 600px){
-        .services-card{
+    @media only screen and (max-width: 1280px) {
+        .services-card {
+            .description {
+                .outcomes {
+                    .up-arrow {
+                        height: 1.5em;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .services-card {
             flex-direction: column;
 
             .icon,
@@ -113,7 +126,7 @@
                 width: 100%;
             }
 
-            .description{
+            .description {
                 height: 12em;
             }
         }

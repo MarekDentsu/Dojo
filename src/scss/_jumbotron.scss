@@ -19,3 +19,30 @@
         width: 80%;
     }
 }
+
+@media only screen and (max-width: 1024px){
+    .jumbotron{
+    
+        .video-container{
+            border-radius: 1.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .jumbotron{
+        aspect-ratio: unset;
+        height: 240px;
+    
+        .video-container{
+            border-radius: 1.5rem;
+            height: 240px;
+            
+            video{
+                height: 240px;
+                width: 450px;
+                position: absolute;
+            }
+        }
+    }
+}

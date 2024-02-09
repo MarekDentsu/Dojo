@@ -17,11 +17,17 @@ h3{
 
 h1, h2{
   font-size: 64px;
-  
-  // text-transform: uppercase;
-  // text-align: center;
 }
 
+@media only screen and (max-width: 1280px){
+  h1, h2{
+    font-size: 56px;
+  }
+
+  ul li{
+    font-size: 0.8em;
+  }
+}
 
 @media only screen and (max-width: 1024px){
   body{
@@ -37,21 +43,44 @@ h1, h2{
   h1, h2{
     font-size: 6vw
   }
+
+  button{
+    font-size: 2.6vw;
+  }
 }
 
 @media only screen and (max-width: 600px){
   body{
-    font-size: 3vw;
-  }
-  h4{
-    font-size: 4vw;
+    font-size: 3.2vw;
+    // font-size: 16px;
   }
   h3{
-    font-size: 5vw;
+    font-size: 4.5vw;
   }
   
   h1, h2{
-    font-size: 7vw
+    font-size: 5.5vw
+  }
+
+  button{
+    font-size: 3.2vw;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  body{
+    font-size: 16px;
+  }
+  h3{
+    font-size: 22px;
+  }
+  
+  h1, h2{
+    font-size: 28px
+  }
+
+  button{
+    font-size: 15px;
   }
 }
 

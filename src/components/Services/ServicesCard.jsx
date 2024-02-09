@@ -3,11 +3,10 @@ import arrowURL from '../../assets/arrow-left.svg'
 
 export default function ServicesCard(props) {
     const { title, subheading, description, outcomes, iconURL } = props
-
     const [showOutcomes, setShowOutcomes] = useState(false)
 
     return (
-        <div className='services-card' onClick={()=>{ setShowOutcomes(!showOutcomes) }}>
+        <div className='services-card' onClick={()=>{ setShowOutcomes(!showOutcomes) } }>
 
             <div className='icon'>
                 <img src={iconURL} alt={title} />

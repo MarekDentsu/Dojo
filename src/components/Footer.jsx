@@ -18,8 +18,6 @@ export default function Footer (props) {
 
                 let split = SplitText.create("h2", { type: ["lines", "words"] });
 
-                console.log(split, footerRef.current)
-
                 const tl = new gsap.timeline({
                     scrollTrigger: {
                         trigger: footerRef.current,

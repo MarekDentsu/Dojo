@@ -29,8 +29,6 @@ export default function Jumbotron(props) {
       let ctx = gsap.context(() => {
 
         let split = SplitText.create("h1", {type:["lines", "words"]});
-
-        console.log(split, jumboRef.current)
         
         gsap.from(split.words, { // <- selector text, scoped to this component!
           y: 60,
