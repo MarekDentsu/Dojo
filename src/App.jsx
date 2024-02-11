@@ -13,47 +13,53 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 function App() {
 
-  // states
-  const [isLoading, setLoading] = useState(true)
-  const [isLoaderReady, setLoaderReady] = useState(0)
-  const [modalVideoIsShowing, setModalVideoIsShowing] = useState(false)
-  const [videoSource, setVideoSource] = useState("")
+    // states
+    const [isLoading, setLoading] = useState(true)
+    const [isLoaderReady, setLoaderReady] = useState(0)
+    const [modalVideoIsShowing, setModalVideoIsShowing] = useState(false)
+    const [videoSource, setVideoSource] = useState("")
 
-  // hooks
-  const size = useResize();
+    // hooks
+    const size = useResize();
 
-  // Simulate, loading
-  useEffect(() => {
-    setTimeout(
-      () => {
-        setLoading(false)
-      }, 500
+    // Simulate, loading
+    useEffect(() => {
+        setTimeout(
+            () => {
+                setLoading(false)
+            }, 500
+        )
+        setTimeout(
+            () => {
+                setLoaderReady(1)
+            }, 250
+        )
+    }, [])
+
+    useEffect(
+        () => {
+            console.log("VIDEO IS SHOWING", modalVideoIsShowing)
+        }, [modalVideoIsShowing]
     )
-    setTimeout(
-      () => {
-        setLoaderReady(1)
-      }, 250
-    )
-  }, [])
 
-  return (
-    <>
-      {isLoaderReady ?
+    return (
         <>
-          <div className={"wrapper" + (isLoading ? " absolute overflow-none" : "")}>
-            <Main isLoading={isLoading} setModalVideoIsShowing={setModalVideoIsShowing} setVideoSource={setVideoSource} />
-            {(size.width >= 1024)
-              ?
-              <StickyLogo />
-              : null
-            }
-          </div>
-          <ModalVideo src={videoSource} isShowing={modalVideoIsShowing} />
+            {isLoaderReady ?
+                <>
+                    <div className={"wrapper" + (isLoading ? " absolute overflow-none" : "")}>
+                        <Main isLoading={isLoading} setModalVideoIsShowing={setModalVideoIsShowing} setVideoSource={setVideoSource} />
+                        {(size.width >= 1024)
+                            ?
+                            <StickyLogo />
+                            : null
+                        }
+                    </div>
+                    <ModalVideo src={videoSource} isShowing={modalVideoIsShowing} />
+                </>
+                : null}
+            <Loader isLoading={isLoading} />
         </>
-        : null}
-      <Loader isLoading={isLoading} />
-    </>
-  )
+    )
 }
 
 export default App

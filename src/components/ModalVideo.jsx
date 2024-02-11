@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 export default function ModalVideo(props) {
 
 
-    // useEffect(
-    //     () => {
-
-    //     }
-    // )
+    useEffect(
+        () => {
+            console.log("VIDEO IS SHOWING", props.isShowing)
+        }, [props.isShowing]
+    )
     return (
         <>
             {(props.isShowing) ?
