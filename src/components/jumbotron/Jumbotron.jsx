@@ -2,6 +2,7 @@ import {gsap, Power2} from "gsap";
 import { ScrollTrigger } from '../../plugins/gsap/ScrollTrigger.js';
 import { SplitText } from '../../plugins/gsap/SplitText.js';
 import { useLayoutEffect, useRef } from "react";
+import Button from "../common/Button.jsx";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 
@@ -59,11 +60,13 @@ export default function Jumbotron(props) {
       <div className="absolute flex-center">
         <div className="title-content">
           <h1 className="white">
-            Turn tech hype <br/>
-            into prototypes <br />
+            Turn technology <br/>
+            hype into prototypes <br />
             that prove value
           </h1>
-          <button className="white">Dojo with us</button>
+          <Button classes={"white"}>
+            Dojo with us
+          </Button>
         </div>
       </div>
     </div>

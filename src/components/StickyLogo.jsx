@@ -7,7 +7,13 @@ export default function StickyLogo(props) {
       <div className='sticky-logo'>
         <div className='sticky'>
           <img className='dojo' src={Logo} alt='DOJO' />
-          <img className='dc' src={DC} alt='DOJO' />
+          <a
+              href="https://www.dentsucreative.com/location/australia"
+              target="_blank"
+              rel="noreferrer"
+          >
+            <img className='dc opacity-hover' src={DC} alt='DOJO' />
+          </a>
           <h3>
             Creative <br />
             Innovation <br />

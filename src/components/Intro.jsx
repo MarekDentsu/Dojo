@@ -3,6 +3,7 @@ import { ScrollTrigger } from '../plugins/gsap/ScrollTrigger.js';
 import { SplitText } from '../plugins/gsap/SplitText.js';
 import { useLayoutEffect, useRef } from "react";
 import useResize from "../hooks/UseResize.js";
+import Button from "./common/Button.jsx";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 
@@ -48,15 +49,15 @@ export default function Intro(props) {
                 <div className="left-col">
                     <h2>
                         We create the <br />
-                        never before
+                        never before.
                     </h2>
                 </div>
                 <div className="right-col">
                     <div className="intro-copy">
                         <p>We bring together our expertise in design innovation, modern creativity and emerging technologies to create  never before brand experiences.</p>
                         <p>We do this by turning ideas into prototypes, and prototypes into proofs of value that can give brands a competitive advantage.</p>
-                        <button 
-                            className="white"
+                        <Button 
+                            classes={"white"} 
                             onClick={
                                 () => {
                                     if(!props.setModalVideoIsShowing){
@@ -64,8 +65,10 @@ export default function Intro(props) {
                                         props.setVideoSource("Dojo_Reel_Short.mp4")
                                     }
                                 }
-                            }   
-                        >Watch the video</button>
+                            } 
+                        >
+                            Watch the video
+                        </Button>
                     </div>
                 </div>
             </div>

@@ -1,65 +1,130 @@
-button{
+// transform 0.4s cubic-bezier(0.1, 0, 0.3, 1)
+
+button {
+    position: relative;
     border: 0;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 1.6em;
     margin: 0;
-    padding: 0.7em 2.1em;
+    padding: 1em 3.6em;
     line-height: 1;
     background-color: black;
     color: white;
-    // text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
 
-    transition: color 0.25s ease-out, background 0.25s ease-out;
-
-    &:hover{
-        background-color: white;
-        color: black;
+    &::after,
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
     }
 
-    &.border{
-        border: 1px solid rgba(255,255,255,0.5);
+    &::before {
+        content: '';
+        width: 120%;
+        height: 0;
+        padding-bottom: 120%;
+        top: -110%;
+        left: -10%;
+        border-radius: 50%;
+        transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
     }
 
-    &.white{
-        background-color: white;
-        color: black;
+    &::after {
+        content: '';
+        width: 120%;
+        height: 0;
+        padding-bottom: 120%;
+        top: -110%;
+        left: -10%;
+        border-radius: 50%;
 
-        &:hover{
+        transform: translate3d(0, -90%, 0);
+        transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+    }
+
+    span {
+        display: block;
+        position: relative;
+        mix-blend-mode: difference;
+        z-index: 10;
+    }
+
+    &:hover {
+        &::before {
+            transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+            transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+        }
+
+        &::after {
+            transform: translate3d(0, -20%, 0);
+            transition-duration: 0.05s;
+            transition-delay: 0.4s;
+            transition-timing-function: linear;
+        }
+    }
+
+    &.white {
+        background-color: white;
+
+        &::before,
+        &::after {
             background-color: black;
-            color: white;
-        }
-
-        &.border{
-            border: 1px solid rgba(0,0,0,0.5);
         }
     }
 
-    &.simple-button{
-        padding: 0;
-        background-color: transparent;
-        font-family: "franklin-gothic-urw", 'Franklin Gothic', Arial, sans-serif;
-        color: inherit;
-        margin: inherit;
+    &.simple {
         font-size: inherit;
-        
-    }
-
-    &.simple{
         padding: 0.6em 1em;
         margin: -0.6em -1em;
         background-color: transparent;
         text-decoration: underline;
+        transform: translateX(0px);
+        transition: all 0.4s cubic-bezier(0.3, 0, 0.1, 1);
+        color: #d8d8d8;
 
-        &:hover{
-            background-color: white;
-            color: black;
-            text-decoration: none;
+        &::before,
+        &::after {
+            content: none;
+        }
+
+        &:hover {
+            color: #fff;
+            // background-color: white;
+            // color: black;
+            // text-decoration: none;
+
+            // padding: 0.6em 2em;
+            // transform: translateX(1em);
         }
     }
 }
 
-p.underlined{
+p.underlined {
     font-weight: 300;
     text-decoration: underline;
-    cursor: pointer;   
+    cursor: pointer;
+}
+
+.opacity-hover {
+
+    transition: opacity 0.3s ease-in;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.4;
+        transition: opacity 0.3s ease-out;
+    }
+
+    &.grey-to-white{
+        opacity: 0.4;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
 }

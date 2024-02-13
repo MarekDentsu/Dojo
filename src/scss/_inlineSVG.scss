@@ -12,6 +12,11 @@ svg{
         stroke-width: 100px;
         fill: none;
     }
+
+    &.button-hover{
+        fill:#f93e3e;
+        stroke-width:0px;
+    }
 }
 
 

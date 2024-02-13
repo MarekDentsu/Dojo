@@ -11,8 +11,14 @@ export default function Navbar(props) {
     return (
         <nav>
             <div className='navbar content flex'>
-                <img className='logo' src={(size.width > 600) ? logoTabletURL : logoMobileURL} alt="Dojo Logo" />    
-                <img className='lockup' src={(size.width > 600) ? dcDojoLockupURL : dcLockupURL} alt="DC / DOJO" />    
+                <img className='logo' src={(size.width > 600) ? logoTabletURL : logoMobileURL} alt="Dojo Logo" /> 
+                <a
+                    href="https://www.dentsucreative.com/location/australia"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <img className='lockup opacity-hover grey-to-white' src={(size.width > 600) ? dcDojoLockupURL : dcLockupURL} alt="DC / DOJO" />    
+                </a>  
             </div>
         </nav>
     )

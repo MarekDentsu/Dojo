@@ -2,6 +2,7 @@ import { gsap, Power2 } from "gsap";
 import { ScrollTrigger } from '../plugins/gsap/ScrollTrigger.js';
 import { SplitText } from '../plugins/gsap/SplitText.js';
 import { useLayoutEffect, useRef } from "react";
+import Button from "./common/Button.jsx";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 
@@ -63,7 +64,20 @@ export default function Footer (props) {
                                 Unleash your innovation. <br />
                                 Create the never before.
                             </h2>
-                            <button className='white'>Dojo with us</button>
+                            <Button 
+                            classes={"white"} 
+                            onClick={
+                                () => {
+                                    if(!props.setModalVideoIsShowing){
+                                        props.setModalVideoIsShowing(true)
+                                        props.setVideoSource("Dojo_Reel_Short.mp4")
+                                    }
+                                }
+                            } 
+                        >
+                            Dojo with us
+                        </Button>
+                        
                         </div>
                     </div>
                 </div>

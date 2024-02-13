@@ -47,8 +47,8 @@ function App() {
             {isLoaderReady ?
                 <>
                     <div className={"wrapper" + (isLoading ? " absolute overflow-none" : "")}>
-                        <Main isLoading={isLoading} setModalVideoIsShowing={setModalVideoIsShowing} setVideoSource={setVideoSource} />
-                        {(size.width >= 1024)
+                        <Main isLoading={isLoading} setModalVideoIsShowing={(isShowing) => setModalVideoIsShowing(isShowing)} setVideoSource={setVideoSource} />
+                        {(size.width > 1024)
                             ?
                             <StickyLogo />
                             : null

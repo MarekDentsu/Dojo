@@ -56,36 +56,33 @@ export default function ServiceOfferings(props) {
                     subheading={"4 hour workshop"}
                     description={"Explore emerging technologies or turn a business opportunity into an exciting new digital proposition."}
                     outcomes={[
-                        "Detailed UX/UI design",
-                        "Clickable prototype",
-                        "User feedback and validation",
-                        "Roadmap and high-level delivery plan",
-                        "Design and development sprints"
+                        "Understanding of Emerging Technologies",
+                        "Ideas and Opportunities",
+                        "Workshop Presentation"
+
                     ]}
                     iconURL={sessionURL}
                 />
                 <ServicesCard
                     title={"Prototypes"}
-                    subheading={"4+ weeks"}
+                    subheading={"1-3 Sprints"}
                     description={"Create a working prototype of an idea, proven to deliver value and impact through human testing and validation."}
                     outcomes={[
-                        "Detailed UX/UI design",
-                        "Clickable prototype",
-                        "User feedback and validation",
-                        "Roadmap and high-level delivery plan",
-                        "Design and development sprints"
+                        "Prioritised Opportunities",
+                        "UX/UI Concept Design",
+                        "Clickable Prototype",
+                        "User Feedback and Validation"
                     ]}
                     iconURL={protoURL}
                 />
                 <ServicesCard
                     title={"Launch"}
-                    subheading={"8+ weeks"}
-                    description={"Explore emerging technologies or turn a business opportunity into an exciting new digital proposition."}
+                    subheading={"3+ Sprints"}
+                    description={"Turn an idea or prototype into an digital experience that helps your business differentiate."}
                     outcomes={[
                         "Detailed UX/UI design",
                         "Clickable prototype",
                         "User feedback and validation",
-                        "Roadmap and high-level delivery plan",
                         "Design and development sprints"
                     ]}
                     iconURL={launchURL}

@@ -11,10 +11,10 @@ import useResize from "../../hooks/UseResize.js";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './slick-override.scss';
+import '../../scss/slick-override.scss';
 
-import leftArrowURL from '../../assets/arrow-left.svg'
-import rightArrowURL from '../../assets/arrow-right.svg'
+import leftArrowURL from '../../assets/arrow-left-white.svg'
+import rightArrowURL from '../../assets/arrow-right-white.svg'
 
 // 
 
@@ -31,13 +31,13 @@ export default function Carousel(props) {
                 <h3>Recent Projects</h3>
                 <div className="arrows">
                     <div
-                        className="arrow-btn prev"
+                        className="arrow-btn prev opacity-hover grey-to-white"
                         onClick={() => sliderRef.current.slickPrev()}
                     >
                         <img src={leftArrowURL} alt="left" />
                     </div>
                     <div
-                        className="arrow-btn next"
+                        className="arrow-btn next opacity-hover grey-to-white"
                         onClick={() => sliderRef.current.slickNext()}
                     >
                         <img src={rightArrowURL} alt="left" />
