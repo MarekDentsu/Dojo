@@ -81,4 +81,18 @@
             }
         }
     }
+
+    @media only screen and (max-width: 600px){
+        .arrows{
+            .arrow-btn{   
+                &.prev{
+                    margin-right: 1em;
+                }
+    
+                img{
+                    width: 1.5em;
+                }
+            }
+        }
+    }
 }

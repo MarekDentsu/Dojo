@@ -25,7 +25,7 @@ export default function Footer (props) {
                         start: "top 90%",
                         end: "bottom 30%",
                     },
-                    delay: 0.2
+                    delay: 0
                 })
                 .from(split.words, { // <- selector text, scoped to this component!
                     y: 60,

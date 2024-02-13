@@ -29,9 +29,11 @@ export default function Intro(props) {
                         duration: 0.75,
                         stagger: 0.04,
                     })
-                    .from(".intro-copy p, .intro-copy button", { // <- selector text, scoped to this component!
+                    .fromTo(".intro-copy", { // <- selector text, scoped to this component!
                         y: 60,
-                        opacity: 0,
+                        opacity: 0},{
+                        y: 0,
+                        opacity: 1,
                         ease: Power2.easeOut,
                         duration: 0.75,
                         stagger: 0.1
@@ -57,7 +59,7 @@ export default function Intro(props) {
                         <p>We bring together our expertise in design innovation, modern creativity and emerging technologies to create  never before brand experiences.</p>
                         <p>We do this by turning ideas into prototypes, and prototypes into proofs of value that can give brands a competitive advantage.</p>
                         <Button 
-                            classes={"white"} 
+                            classes={"white grey-hover"} 
                             onClick={
                                 () => {
                                     if(!props.setModalVideoIsShowing){

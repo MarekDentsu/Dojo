@@ -30,15 +30,6 @@ export default function ServiceOfferings(props) {
                     ease: Power2.easeOut,
                     duration: 0.75,
                 })
-                .from(".services-card", {
-                    y: 50,
-                    opacity: 0,
-                    ease: Power2.easeOut,
-                    duration: 0.75,
-                    stagger: 0.25
-                }, "-=0.25")
-                    
-
             }, servicesRef.current); 
             return () => ctx.revert();
         }

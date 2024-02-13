@@ -71,10 +71,34 @@ button {
     &.white {
         background-color: white;
 
+        
+
+
+        &.grey-hover{
+            &::before,
+            &::after {
+                background-color: #646464;
+                transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1) color 0.4s cubic-bezier(0.5, 0, 0.1, 1);
+            }
+
+            &:hover {
+                span{
+                    color: #fff;
+                }
+            }
+
+            span{
+                mix-blend-mode: normal;
+                color: black;
+            }
+        }
+
         &::before,
         &::after {
-            background-color: black;
+            background-color: #000;
         }
+
+        
     }
 
     &.simple {
