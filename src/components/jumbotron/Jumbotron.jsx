@@ -64,7 +64,9 @@ export default function Jumbotron(props) {
             hype into prototypes <br />
             that prove value
           </h1>
-          <Button classes={"white"}>
+          <Button classes={"white"} onClick={() => {
+            window.location = 'mailto:dojoanz@dentsu.com?subject=Dojo Enquiry'
+          }}>
             Dojo with us
           </Button>
         </div>

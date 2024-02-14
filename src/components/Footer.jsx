@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 
 
-export default function Footer (props) {
+export default function Footer(props) {
 
     const footerRef = useRef()
 
@@ -27,26 +27,26 @@ export default function Footer (props) {
                     },
                     delay: 0
                 })
-                .from(split.words, { // <- selector text, scoped to this component!
-                    y: 60,
-                    ease: Power2.easeInOut,
-                    duration: 0.75,
-                    stagger: 0.04,
-                })
-                .from("button", { // <- selector text, scoped to this component!
-                    y: 60,
-                    opacity: 0,
-                    ease: Power2.easeOut,
-                    duration: 0.75,
-                    stagger: 0.1
-                }, "-=0.25")
-                .from("li", { // <- selector text, scoped to this component!
-                    y: 60,
-                    opacity: 0,
-                    ease: Power2.easeOut,
-                    duration: 0.75,
-                    stagger: 0.1
-                }, "-=0.5")
+                    .from(split.words, { // <- selector text, scoped to this component!
+                        y: 60,
+                        ease: Power2.easeInOut,
+                        duration: 0.75,
+                        stagger: 0.04,
+                    })
+                    .from("button", { // <- selector text, scoped to this component!
+                        y: 60,
+                        opacity: 0,
+                        ease: Power2.easeOut,
+                        duration: 0.75,
+                        stagger: 0.1
+                    }, "-=0.5")
+                    .from("li", { // <- selector text, scoped to this component!
+                        y: 60,
+                        opacity: 0,
+                        ease: Power2.easeOut,
+                        duration: 0.75,
+                        stagger: 0.075
+                    }, "-=0.65")
 
                 return () => split.revert(); // context cleanup
             }, footerRef.current); // <- scopes all selector text inside the context to this component (optional, default is document)
@@ -54,7 +54,7 @@ export default function Footer (props) {
         }
     }, [props.isLoading]);
 
-    return(
+    return (
         <section className="footer grey" ref={footerRef}>
             <div className="content">
                 <div className="footer-content">
@@ -64,32 +64,42 @@ export default function Footer (props) {
                                 Unleash your innovation. <br />
                                 Create the never before.
                             </h2>
-                            <Button 
-                            classes={"white"} 
-                            onClick={
-                                () => {
-                                    if(!props.setModalVideoIsShowing){
-                                        props.setModalVideoIsShowing(true)
-                                        props.setVideoSource("Dojo_Reel_Short.mp4")
-                                    }
-                                }
-                            } 
-                        >
-                            Dojo with us
-                        </Button>
-                        
+                            <Button
+                                classes={"white"}
+                                onClick={() => {
+                                    window.location = 'mailto:dojoanz@dentsu.com?subject=Dojo Enquiry'
+                                }}
+                            >
+                                Dojo with us
+                            </Button>
+
                         </div>
                     </div>
                 </div>
                 <div className="bottom-links">
                     <ul>
                         <li>© Dentsu Creative 2024</li>
-                        <li>Privacy Notice</li>
-                        <li>Cookie Policy</li>
+                        <li>
+                            <button className="simple black" onClick={() => {
+                                context.setModalVideoIsShowing(true)
+                                context.setVideoSource(videoURL)
+                            }}>Privacy Notice</button>
+                        </li>
+                        <li>
+                            <button className="simple black" onClick={() => {
+                                context.setModalVideoIsShowing(true)
+                                context.setVideoSource(videoURL)
+                            }}>Cookie Policy</button>
+                        </li>
+                        <li>
+                            <button className="simple black" onClick={() => {
+                                context.setModalVideoIsShowing(true)
+                                context.setVideoSource(videoURL)
+                            }}>Terms and conditions</button>
+                        </li>
                     </ul>
                 </div>
             </div>
         </section>
     )
 }
-    

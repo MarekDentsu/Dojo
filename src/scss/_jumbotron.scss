@@ -5,6 +5,7 @@
     .video-container {
         border-radius: 2rem;
         position: relative;
+        overflow: clip;
 
         video {
             width: 100%;

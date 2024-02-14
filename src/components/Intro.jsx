@@ -1,17 +1,20 @@
 import { gsap, Power2 } from "gsap";
 import { ScrollTrigger } from '../plugins/gsap/ScrollTrigger.js';
 import { SplitText } from '../plugins/gsap/SplitText.js';
-import { useLayoutEffect, useRef } from "react";
+import { useContext, useEffect, useLayoutEffect, useRef } from "react";
 import useResize from "../hooks/UseResize.js";
 import Button from "./common/Button.jsx";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
+import { ModalContext } from '../App'
 
 
 export default function Intro(props) {
 
     const intrtoRef = useRef()
     const size = useResize()
+    const context = useContext(ModalContext);
+
 
     useLayoutEffect(() => {
         if (!props.isLoading) {
@@ -31,7 +34,8 @@ export default function Intro(props) {
                     })
                     .fromTo(".intro-copy", { // <- selector text, scoped to this component!
                         y: 60,
-                        opacity: 0},{
+                        opacity: 0
+                    }, {
                         y: 0,
                         opacity: 1,
                         ease: Power2.easeOut,
@@ -58,16 +62,16 @@ export default function Intro(props) {
                     <div className="intro-copy">
                         <p>We bring together our expertise in design innovation, modern creativity and emerging technologies to create  never before brand experiences.</p>
                         <p>We do this by turning ideas into prototypes, and prototypes into proofs of value that can give brands a competitive advantage.</p>
-                        <Button 
-                            classes={"white grey-hover"} 
+                        <Button
+                            classes={"white grey-hover"}
                             onClick={
                                 () => {
-                                    if(!props.setModalVideoIsShowing){
-                                        props.setModalVideoIsShowing(true)
-                                        props.setVideoSource("Dojo_Reel_Short.mp4")
+                                    if (!context.modalVideoIsShowing) {
+                                        context.setModalVideoIsShowing(true)
+                                        context.setVideoSource("Dojo_Reel_Short.mp4")
                                     }
                                 }
-                            } 
+                            }
                         >
                             Watch the video
                         </Button>

@@ -1,24 +1,46 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react"
+import { ModalContext } from '../App'
+import crossURL from '../assets/cross.svg'
 
 export default function ModalVideo(props) {
+    const context = useContext(ModalContext);
 
+    const [videoSource, setVideoSource] = useState(null)
+    const [willClose, setWillClose] = useState(false)
 
     useEffect(
         () => {
-            console.log("VIDEO IS SHOWING", props.isShowing)
-        }, [props.isShowing]
+            if(willClose){
+                setTimeout(
+                    () => {
+                        context.setModalVideoIsShowing(false)
+                        context.setVideoSource(null)
+                        setWillClose(false)
+                    }, 500
+                )
+            }
+        }, [willClose]
     )
+
     return (
         <>
-            {(props.isShowing) ?
-                <div className={`absolute modal`}>
-                    <div className="modal-nav">
-                        X
-                    </div>
-                    <div className="video-container">
-                        <video autoPlay loop playsInline>
-                            <source src={props.src} type={"video/" + props.src.split(".")[1]} />
-                        </video>
+            {(context.videoSource && context.modalVideoIsShowing) ?
+                <div className={`absolute modal ${willClose ? "will-close" : ""}`}>
+                    <div className="modal-container">
+                        <div className="video-container absolute flex-center">
+                            <video autoPlay loop playsInline controls>
+                                <source src={context.videoSource} type={"video/" + context.videoSource.split(".")[1]} />
+                            </video>
+                        </div>
+                        <button className="image-button opacity-hover grey-to-white" onClick={
+                            () => {
+                                if(!willClose){
+                                    setWillClose(true)
+                                }
+                            }
+                        }>
+                            <img src={crossURL} alt="x" />
+                        </button>
                     </div>
                 </div>
                 :

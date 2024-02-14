@@ -23,10 +23,7 @@ export default function Main(props) {
                 </section>
                 <section className="spacer">
                     <div className="content">
-                        <Intro  
-                            setModalVideoIsShowing={props.setModalVideoIsShowing} 
-                            setVideoSource={props.setVideoSource} 
-                        />
+                        <Intro />
                     </div>
                 </section>
                 <section className="spacer">
