@@ -27,17 +27,17 @@ export const data = [
         videoURL: "work/Skip-Expresslane-Inflation-CookBook.mp4"
     },
     {
-        heading: "Footlocker",
+        heading: "Tune the Tuned",
         brand: "Footlocker",
         copy: `
-            Lorem Ipsum guided cocktail guide with a zesty personality.
+            Reinvented the way Foot Locker launch a shoe that puts the consumer front and centre. 
             `,
         imageURL: "work/Footlocker.jpg",
         videoURL: "work/Footlocker.mp4"
     },
     {
-        heading: "UNIQLO",
-        brand: "Umood",
+        heading: "UMood",
+        brand: "UNIQLO",
         copy: `
             Lorem Ipsum guided cocktail guide with a zesty personality.
             `,
@@ -46,9 +46,8 @@ export const data = [
     },
     {
         heading: "Carriberrie",
-        brand: "Carriberrie VR",
         copy: `
-            Lorem Ipsum guided cocktail guide with a zesty personality.
+        An immersive virtual reality showcase that celebrates the depth and diversity of Australia’s Indigenous culture.
             `,
         imageURL: "work/Carriberrie-VR.jpg",
         videoURL: "work/Carriberrie-VR.mp4"

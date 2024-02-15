@@ -29,7 +29,7 @@ export default function CarouselCard(props) {
             <div className="description">
                 <div>
                     <h3>{heading}</h3>
-                    <h5>{brand}</h5>
+                    {brand && <h5>{brand}</h5>}
                     <p>{copy}</p>
                 </div>
                 <button className="simple black" onClick={click}>Watch the video</button>
