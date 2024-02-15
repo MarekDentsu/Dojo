@@ -23,7 +23,10 @@ export default function Intro(props) {
 
                 const tl = new gsap.timeline({
                     scrollTrigger: intrtoRef.current,
-                    delay: 0.6
+                    delay: 0.6,
+                    onComplete: () => {
+                        split.revert()
+                    }
                 })
                     .from(split.words, { // <- selector text, scoped to this component!
                         y: 60,

@@ -36,7 +36,10 @@ export default function Jumbotron(props) {
           ease: Power2.easeInOut,
           duration: 0.75,
           stagger: 0.04,
-          delay: 0.25
+          delay: 0.25,
+          onComplete: () => {
+            split.revert()
+          }
         });
         gsap.from("button", { // <- selector text, scoped to this component!
           y: 60,
@@ -46,7 +49,7 @@ export default function Jumbotron(props) {
           delay: 0.75
         });
         
-        return () => split.revert(); // context cleanup
+        // return () => split.revert(); // context cleanup
       }, jumboRef.current); // <- scopes all selector text inside the context to this component (optional, default is document)
       return () => ctx.revert(); // useLayoutEffect cleanup
     }

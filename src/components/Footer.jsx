@@ -26,6 +26,9 @@ export default function Footer(props) {
                         start: "top 90%",
                         end: "bottom 30%",
                     },
+                    onComplete: () => {
+                        split.revert()
+                    },
                     delay: 0
                 })
                     .from(split.words, { // <- selector text, scoped to this component!
@@ -82,21 +85,21 @@ export default function Footer(props) {
                         <li><span className="copyright">&copy;</span> Dentsu Creative 2024</li>
                         <li>
                             <Link to={"/privacy-notice"} onClick={() => {
-                                window.scrollTo(0,0)
+                                window.scrollTo(0, 0)
                             }}>
                                 <button className="simple black">Privacy Notice</button>
                             </Link>
                         </li>
                         <li>
                             <Link to={"/cookies-notice"} onClick={() => {
-                                window.scrollTo(0,0)
+                                window.scrollTo(0, 0)
                             }}>
                                 <button className="simple black">Cookie Notice</button>
                             </Link>
                         </li>
                         <li>
                             <Link to={"/terms-and-conditions"} onClick={() => {
-                                window.scrollTo(0,0)
+                                window.scrollTo(0, 0)
                             }}>
                                 <button className="simple black">Terms and conditions</button>
                             </Link>
