@@ -39,7 +39,7 @@ export const data = [
         heading: "UMood",
         brand: "UNIQLO",
         copy: `
-            Lorem Ipsum guided cocktail guide with a zesty personality.
+            A neurological shopping experience that helped shoppers find their perfect style.
             `,
         imageURL: "work/UNIQLO-Umood.jpg",
         videoURL: "work/UNIQLO-Umood.mp4"
@@ -47,7 +47,7 @@ export const data = [
     {
         heading: "Carriberrie",
         copy: `
-        An immersive virtual reality showcase that celebrates the depth and diversity of Australia’s Indigenous culture.
+            An immersive virtual reality showcase that celebrates the depth and diversity of Australia’s Indigenous culture.
             `,
         imageURL: "work/Carriberrie-VR.jpg",
         videoURL: "work/Carriberrie-VR.mp4"
