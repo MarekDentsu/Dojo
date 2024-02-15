@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 import Slider from "react-slick";
 import { data } from './data.js'
 
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import CarouselCard from "./CarouselCard.jsx";
 import useResize from "../../hooks/UseResize.js";
 
@@ -19,8 +19,8 @@ import rightArrowURL from '../../assets/arrow-right-white.svg'
 // 
 
 export default function Carousel(props) {
-    const sliderRef = useRef()
-    const carouselRef = useRef()
+    const slickSliderRef = useRef()
+    const carouselContainerRef = useRef()
     const navRef = useRef()
     const sliderHolderRef = useRef()
     const size = useResize()
@@ -32,13 +32,13 @@ export default function Carousel(props) {
                 <div className="arrows">
                     <div
                         className="arrow-btn prev opacity-hover grey-to-white"
-                        onClick={() => sliderRef.current.slickPrev()}
+                        onClick={() => slickSliderRef.current.slickPrev()}
                     >
                         <img src={leftArrowURL} alt="left" />
                     </div>
                     <div
                         className="arrow-btn next opacity-hover grey-to-white"
-                        onClick={() => sliderRef.current.slickNext()}
+                        onClick={() => slickSliderRef.current.slickNext()}
                     >
                         <img src={rightArrowURL} alt="left" />
                     </div>
@@ -47,15 +47,21 @@ export default function Carousel(props) {
         );
     };
 
+    useEffect(
+        () => {
+            console.log(slickSliderRef)
+        }, [slickSliderRef]
+    )
+
 
     useLayoutEffect(() => {
 
-        if (sliderRef.current) {
+        if (slickSliderRef.current) {
             let ctx = gsap.context(() => {
 
                 const tl = new gsap.timeline({
                     scrollTrigger: {
-                        trigger: carouselRef.current,
+                        trigger: carouselContainerRef.current,
                         start: "top 90%",
                         end: "bottom 30%",
                     },
@@ -75,10 +81,10 @@ export default function Carousel(props) {
                         stagger: 0.1
                     }, "-=0.75")
 
-            }, carouselRef.current); 
+            }, carouselContainerRef.current); 
             return () => ctx.revert();
         }
-    }, [carouselRef]);
+    }, [carouselContainerRef]);
 
 
     const getSlidesToShow = () => {
@@ -90,18 +96,20 @@ export default function Carousel(props) {
     }
 
     return (
-        <div className="carousel" ref={carouselRef}>
+        <div className="carousel" ref={carouselContainerRef}>
 
             <Arrows />
             <div ref={sliderHolderRef}>
                 <Slider
                     dots={false}
                     arrows={false}
-                    ref={sliderRef}
+                    ref={slickSliderRef}
                     infinite={true}
                     speed={500}
                     slidesToShow={getSlidesToShow()}
                     slidesToScroll={1}
+                    initialSlide={Math.floor(Math.random() * data.length)}
+
                 >
                     {data.map((cardData, i) => {
                         return (<CarouselCard

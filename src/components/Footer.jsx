@@ -3,6 +3,7 @@ import { ScrollTrigger } from '../plugins/gsap/ScrollTrigger.js';
 import { SplitText } from '../plugins/gsap/SplitText.js';
 import { useLayoutEffect, useRef } from "react";
 import Button from "./common/Button.jsx";
+import { Link } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 
@@ -78,24 +79,27 @@ export default function Footer(props) {
                 </div>
                 <div className="bottom-links">
                     <ul>
-                        <li>© Dentsu Creative 2024</li>
+                        <li><span className="copyright">&copy;</span> Dentsu Creative 2024</li>
                         <li>
-                            <button className="simple black" onClick={() => {
-                                context.setModalVideoIsShowing(true)
-                                context.setVideoSource(videoURL)
-                            }}>Privacy Notice</button>
+                            <Link to={"/privacy-notice"} onClick={() => {
+                                window.scrollTo(0,0)
+                            }}>
+                                <button className="simple black">Privacy Notice</button>
+                            </Link>
                         </li>
                         <li>
-                            <button className="simple black" onClick={() => {
-                                context.setModalVideoIsShowing(true)
-                                context.setVideoSource(videoURL)
-                            }}>Cookie Policy</button>
+                            <Link to={"/cookies-notice"} onClick={() => {
+                                window.scrollTo(0,0)
+                            }}>
+                                <button className="simple black">Cookie Notice</button>
+                            </Link>
                         </li>
                         <li>
-                            <button className="simple black" onClick={() => {
-                                context.setModalVideoIsShowing(true)
-                                context.setVideoSource(videoURL)
-                            }}>Terms and conditions</button>
+                            <Link to={"/terms-and-conditions"} onClick={() => {
+                                window.scrollTo(0,0)
+                            }}>
+                                <button className="simple black">Terms and conditions</button>
+                            </Link>
                         </li>
                     </ul>
                 </div>

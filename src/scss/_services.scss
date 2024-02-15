@@ -35,16 +35,30 @@
         .icon {
             position: relative;
             width: calc(40% - 2em);
-            // min-height: 16vw;
             height: 22vw;
             max-height: 15em;
             text-align: center;
 
-            img {
+            svg {
                 // position: absolute;
                 // width: 100%;
                 // height: 100%;
                 height: 100%;
+
+                path {
+                    fill: none;
+                    stroke-width: 5px;
+                }
+
+                .semicircle path {
+                    stroke: #191919;
+                    stroke-linecap: square;
+                }
+
+                .lines path {
+                    stroke: #646464;
+                    stroke-linecap: round;
+                }
             }
         }
 
@@ -128,28 +142,28 @@
                 width: 100%;
             }
 
-            .icon{
+            .icon {
                 height: 60vw;
             }
 
             .description {
                 min-height: 12em;
 
-                .services-intro{
+                .services-intro {
                     padding: 1em 0 2em 0;
 
                 }
 
-                .outcome-nav{
+                .outcome-nav {
                     display: flex;
                     flex-direction: row;
                     align-items: baseline;
 
-                    h5{
+                    h5 {
                         width: 70%;
                     }
 
-                    .up-arrow{
+                    .up-arrow {
                         width: 1.5em;
                         height: 1.5em;
                         margin: 0 1em 1em 0;

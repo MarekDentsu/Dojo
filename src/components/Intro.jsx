@@ -6,7 +6,7 @@ import useResize from "../hooks/UseResize.js";
 import Button from "./common/Button.jsx";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-import { ModalContext } from '../App'
+import { ModalContext } from './Pages/Home.jsx'
 
 
 export default function Intro(props) {
@@ -14,6 +14,8 @@ export default function Intro(props) {
     const intrtoRef = useRef()
     const size = useResize()
     const context = useContext(ModalContext);
+
+    console.log(context)
 
 
     useLayoutEffect(() => {

@@ -1,12 +1,13 @@
 import { gsap, Power2 } from "gsap";
 import { ScrollTrigger } from '../../plugins/gsap/ScrollTrigger.js';
-gsap.registerPlugin(ScrollTrigger);
+import { DrawSVGPlugin } from '../../plugins/gsap/DrawSVGPlugin.js';
+gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
 import { useRef, useState, useLayoutEffect } from 'react'
 import arrowURL from '../../assets/arrow-left.svg'
 
 export default function ServicesCard(props) {
-    const { title, subheading, description, outcomes, iconURL } = props
+    const { title, subheading, description, outcomes, icon } = props
     const [showOutcomes, setShowOutcomes] = useState(false)
 
     const cardRef = useRef()
@@ -20,8 +21,7 @@ export default function ServicesCard(props) {
                         trigger: cardRef.current,
                         start: "top 90%",
                         end: "bottom 30%",
-                    },
-                    delay: 0.15
+                    }
                 })
                 .from(cardRef.current, {
                     y: 50,
@@ -29,6 +29,26 @@ export default function ServicesCard(props) {
                     ease: Power2.easeOut,
                     duration: 0.75
                 })
+                .from("svg", {
+                    rotation: 25,
+                    ease: Power2.easeOut,
+                    duration: 0.75,
+                }, "-=0.75")
+                .fromTo(".semicircle path", {
+                    drawSVG: "0% 0%"
+                },{
+                    drawSVG: "0% 100%",
+                    ease: Power2.easeInOut,
+                    duration: 0.75,
+                }, "-=0.75")
+                .fromTo(".lines path", {
+                    drawSVG: "0% 0%"
+                },{
+                    drawSVG: "0% 100%",
+                    ease: Power2.easeOut,
+                    duration: 0.75,
+                    stagger: 0.02
+                }, "-=0.45")
                     
 
             }, cardRef.current); 
@@ -40,7 +60,8 @@ export default function ServicesCard(props) {
         <div className='services-card' ref={cardRef} onClick={() => { setShowOutcomes(!showOutcomes) }}>
 
             <div className='icon'>
-                <img src={iconURL} alt={title} />
+                {/* <img src={iconURL} alt={title} /> */}
+                {icon}
             </div>
 
             <div className={"description" + (showOutcomes ? " show-outcomes" : "")}>

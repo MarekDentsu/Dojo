@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 export default function Main(props) {
     return (
         <>
-            <div className='main'>
+            <div className="main">
                 <Navbar />
                 <section classes="spacer">
                     <div className="content">

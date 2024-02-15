@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { ModalContext } from '../App'
+import { ModalContext } from './Pages/Home.jsx'
 import crossURL from '../assets/cross.svg'
 
 export default function ModalVideo(props) {
@@ -24,7 +24,7 @@ export default function ModalVideo(props) {
 
     return (
         <>
-            {(context.videoSource && context.modalVideoIsShowing) ?
+            {(context && context.videoSource && context.modalVideoIsShowing) ?
                 <div className={`absolute modal ${willClose ? "will-close" : ""}`}>
                     <div className="modal-container">
                         <div className="video-container absolute flex-center">

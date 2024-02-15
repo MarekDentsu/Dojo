@@ -3,9 +3,7 @@ import { ScrollTrigger } from '../../plugins/gsap/ScrollTrigger.js';
 gsap.registerPlugin(ScrollTrigger);
 
 import { useLayoutEffect, useRef } from 'react'
-import launchURL from '../../assets/services-icon-launch.svg'
-import protoURL from '../../assets/services-icon-prototypes.svg'
-import sessionURL from '../../assets/services-icon-sessions.svg'
+import { IconLaunch, IconPrototypes, IconSessions } from "./ServiceIcons.jsx";
 import ServicesCard from './ServicesCard.jsx'
 
 export default function ServiceOfferings(props) {
@@ -52,7 +50,7 @@ export default function ServiceOfferings(props) {
                         "Workshop Presentation"
 
                     ]}
-                    iconURL={sessionURL}
+                    icon={<IconSessions />}
                 />
                 <ServicesCard
                     title={"Prototypes"}
@@ -64,7 +62,7 @@ export default function ServiceOfferings(props) {
                         "Clickable Prototype",
                         "User Feedback and Validation"
                     ]}
-                    iconURL={protoURL}
+                    icon={<IconPrototypes />}
                 />
                 <ServicesCard
                     title={"Launch"}
@@ -76,7 +74,7 @@ export default function ServiceOfferings(props) {
                         "User feedback and validation",
                         "Design and development sprints"
                     ]}
-                    iconURL={launchURL}
+                    icon={<IconLaunch />}
                 />
 
             </div>

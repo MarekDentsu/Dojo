@@ -27,6 +27,30 @@ button{
   font-size: 0.8em;
 }
 
+// Legals
+.copy-holder{
+  padding: 2em 0 5em 0;
+  line-height: 1.4;
+
+  p{
+      margin-bottom: 0.75em;
+  }
+
+  h3{
+      margin-top: 2em;
+  }
+  h2{
+      margin-top: 2em;
+  }
+
+  ul{
+      margin-bottom: 0.75em;
+      li{
+          margin-left: 1em;
+      }
+  }
+}
+
 @media only screen and (max-width: 1280px){
   body{
     font-size: 18px;
