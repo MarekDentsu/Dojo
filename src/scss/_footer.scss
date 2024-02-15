@@ -27,21 +27,42 @@
         flex-direction: row;
         list-style: none;
         justify-content: space-between;
-        width: 60%;
+        width: 96%;
         overflow-y: hidden;
         padding: 0 0 0.5em 0;
 
         li {
             font-size: 0.8em;
+            padding: 0 0.5em;
+        }
+    }
+    
+    @media only screen and (min-width: 1680px){
+        ul{
+            width: 66%;
         }
     }
 
     @media only screen and (max-width: 1024px){
         margin: 0 -2em;
         padding: 3em 2em;
-
-
         height: auto;
         
+        // ul{
+        //     width: 90%;
+        // }
+    }
+
+    @media only screen and (max-width: 720px){
+        margin: 0 -2em;
+        padding: 0em 2em 10em 2em;
+        height: auto;
+
+        .bottom-links{
+            ul{
+                position: relative;
+                flex-direction: column;
+            }
+        }        
     }
 }

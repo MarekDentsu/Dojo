@@ -22,13 +22,13 @@ export default function ServiceOfferings(props) {
                     },
                     delay: 0.35
                 })
-                .from(".services-title", {
-                    y: 60,
-                    opacity: 0,
-                    ease: Power2.easeOut,
-                    duration: 0.75,
-                })
-            }, servicesRef.current); 
+                    .from(".services-title", {
+                        y: 60,
+                        opacity: 0,
+                        ease: Power2.easeOut,
+                        duration: 0.75,
+                    })
+            }, servicesRef.current);
             return () => ctx.revert();
         }
     }, [servicesRef]);
@@ -37,10 +37,13 @@ export default function ServiceOfferings(props) {
         <div className='service-offerings' {...props} ref={servicesRef}>
             <div className="services-title">
                 <h3>Service Offerings</h3>
-                <p>Generate new ideas, prototype and test with customers, or launch a never before experience.</p>
+                <div className="flex-2-col">
+                    <p>We bring together our expertise in design innovation, modern creativity and emerging technologies to create  never before brand experiences.</p>
+                    <p>We do this by turning ideas into prototypes, and prototypes into proofs of value that can give brands a competitive advantage.</p>
+                </div>
             </div>
             <div className='services'>
-            <ServicesCard
+                <ServicesCard
                     title={"Sessions"}
                     subheading={"4 hour workshop"}
                     description={"Explore emerging technologies or turn a business opportunity into an exciting new digital proposition."}

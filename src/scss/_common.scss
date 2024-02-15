@@ -9,11 +9,12 @@
     flex-direction: row;
     justify-content: space-between;
 
-    > div{
+    > div,
+    > p{
         flex-basis: 48%;
     }
 
-    @media only screen and (max-width: 600px){
+    @media only screen and (max-width: 720px){
         flex-direction: column;
 
         > div {

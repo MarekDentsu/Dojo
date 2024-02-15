@@ -15,9 +15,6 @@ export default function Intro(props) {
     const size = useResize()
     const context = useContext(ModalContext);
 
-    console.log(context)
-
-
     useLayoutEffect(() => {
         if (!props.isLoading) {
             let ctx = gsap.context(() => {

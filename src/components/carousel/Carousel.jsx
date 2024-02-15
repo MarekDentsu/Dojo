@@ -47,13 +47,6 @@ export default function Carousel(props) {
         );
     };
 
-    useEffect(
-        () => {
-            console.log(slickSliderRef)
-        }, [slickSliderRef]
-    )
-
-
     useLayoutEffect(() => {
 
         if (slickSliderRef.current) {

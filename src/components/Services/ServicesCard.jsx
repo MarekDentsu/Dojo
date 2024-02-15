@@ -70,13 +70,13 @@ export default function ServicesCard(props) {
                         <h3>{title}</h3>
                         {subheading ? <p className='small'>{subheading}</p> : null}
                         <p>{description}</p>
-                        <p className='underlined'>See key outcomes</p>
+                        <p className='underlined opacity-hover'>See key outcomes</p>
                     </div>
                 </div>
                 <div className="outcomes">
                     <div>
                         <div className='outcome-nav'>
-                            <img className='up-arrow' src={arrowURL} alt="up" />
+                            <img className='up-arrow opacity-hover' src={arrowURL} alt="up" />
                             <h5>Key Outcomes</h5>
                         </div>
                         <ul>
