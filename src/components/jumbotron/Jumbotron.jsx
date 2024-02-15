@@ -56,7 +56,7 @@ export default function Jumbotron(props) {
     <div className="jumbotron" ref={jumboRef}>
       <VideoBackground sources={[
         "Dojo_Reel_Short.mp4"
-      ]} poster="work/dojo-placeholder-work-00.jpg"/>
+      ]} poster="Dojo_Reel_Short.jpg"/>
       <div className="absolute flex-center">
         <div className="title-content">
           <h1 className="white">

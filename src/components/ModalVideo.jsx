@@ -28,8 +28,8 @@ export default function ModalVideo(props) {
                 <div className={`absolute modal ${willClose ? "will-close" : ""}`}>
                     <div className="modal-container">
                         <div className="video-container absolute flex-center">
-                            <video autoPlay loop playsInline controls>
-                                <source src={context.videoSource} type={"video/" + context.videoSource.split(".")[1]} />
+                            <video autoPlay loop playsInline controls poster={`${context.videoSource.split(".")[1]}.jpg`}>
+                                <source src={context.videoSource} type={`video/${context.videoSource.split(".")[1]}`} />
                             </video>
                         </div>
                         <button className="image-button opacity-hover grey-to-white" onClick={
