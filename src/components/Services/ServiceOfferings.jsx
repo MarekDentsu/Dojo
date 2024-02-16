@@ -38,8 +38,8 @@ export default function ServiceOfferings(props) {
             <div className="services-title">
                 <h3>Service Offerings</h3>
                 <div className="flex-2-col">
-                    <p>We bring together our expertise in design innovation, modern creativity and emerging technologies to create  never before brand experiences.</p>
-                    <p>We do this by turning ideas into prototypes, and prototypes into proofs of value that can give brands a competitive advantage.</p>
+                    <p>Accelerate innovation and create a competitive advantage for your business.</p>
+                    <p>Whatever you’re looking to achieve, we can tailor our approach to suit your needs.</p>
                 </div>
             </div>
             <div className='services'>
@@ -70,7 +70,7 @@ export default function ServiceOfferings(props) {
                 <ServicesCard
                     title={"Launch"}
                     subheading={"3+ Sprints"}
-                    description={"Turn an idea or prototype into an digital experience that helps your business differentiate."}
+                    description={"Turn an idea into a digital experience that delivers a competitive advantage for your business."}
                     outcomes={[
                         "Detailed UX/UI design",
                         "Clickable prototype",

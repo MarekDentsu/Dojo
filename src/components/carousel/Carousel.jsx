@@ -28,7 +28,7 @@ export default function Carousel(props) {
     const Arrows = () => {
         return (
             <div className="slick-nav" ref={navRef}>
-                <h3>Recent Projects</h3>
+                <h3>Recent Work</h3>
                 <div className="arrows">
                     <div
                         className="arrow-btn prev opacity-hover grey-to-white"
@@ -101,6 +101,7 @@ export default function Carousel(props) {
                     speed={500}
                     slidesToShow={getSlidesToShow()}
                     slidesToScroll={1}
+                    variableHeight={false}
                     initialSlide={Math.floor(Math.random() * data.length)}
 
                 >

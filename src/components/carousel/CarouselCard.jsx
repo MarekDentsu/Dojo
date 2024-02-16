@@ -15,7 +15,7 @@ export default function CarouselCard(props) {
     }
 
     const click = (e) => {
-        if(e.clientX === mouseStartX){
+        if (e.clientX === mouseStartX) {
             context.setModalVideoIsShowing(true)
             context.setVideoSource(videoURL)
         }
@@ -23,17 +23,19 @@ export default function CarouselCard(props) {
 
     return (
         <div className="carousel-card" onMouseDown={mouseDown} onTouchStart={mouseDown} ref={cardRef}>
-            <div className="card-image" onClick={click}>
-                <img src={imageURL} alt="" />
-            </div>
-            <div className="description">
-                <div>
-                    <h3>{heading}</h3>
-                    {brand && <h5>{brand}</h5>}
-                    <p>{copy}</p>
+            <div>
+                <div className="card-image" onClick={click}>
+                    <img src={imageURL} alt="" />
                 </div>
-                <button className="simple black" onClick={click}>Watch the video</button>
+                <div className="description">
+                    <div>
+                        <h3>{heading}</h3>
+                        {brand && <h5>{brand}</h5>}
+                        <p>{copy}</p>
+                    </div>
+                </div>
             </div>
+            <button className="simple black" onClick={click}>Watch the video</button>
         </div>
     )
 }

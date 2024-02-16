@@ -28,7 +28,7 @@ export const data = [
     },
     {
         heading: "Tune the Tuned",
-        brand: "Footlocker",
+        brand: "Foot Locker",
         copy: `
             Reinvented the way Foot Locker launch a shoe that puts the consumer front and centre. 
             `,
@@ -45,7 +45,8 @@ export const data = [
         videoURL: "work/UNIQLO-Umood.mp4"
     },
     {
-        heading: "Carriberrie",
+        heading: "Carriberrie VR",
+        brand: "IASD",
         copy: `
             An immersive virtual reality showcase that celebrates the depth and diversity of Australia’s Indigenous culture.
             `,

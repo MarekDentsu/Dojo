@@ -63,14 +63,14 @@ export default function Intro(props) {
                 <div className="right-col">
                     <div className="intro-copy">
                         <p>We bring together our expertise in design innovation, modern creativity and emerging technologies to create  never before brand experiences.</p>
-                        <p>We do this by turning ideas into prototypes, and prototypes into proofs of value that can give brands a competitive advantage.</p>
+                        <p>We do this by turning ideas into prototypes that prove value to give brands a competitive advantage.</p>
                         <Button
                             classes={"white grey-hover"}
                             onClick={
                                 () => {
                                     if (!context.modalVideoIsShowing) {
                                         context.setModalVideoIsShowing(true)
-                                        context.setVideoSource("Dojo_Reel_Short.mp4")
+                                        context.setVideoSource("work/3002088_Dojo_Reel.mp4")
                                     }
                                 }
                             }

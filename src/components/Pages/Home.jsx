@@ -24,12 +24,12 @@ function Home() {
         setTimeout(
             () => {
                 setLoading(false)
-            }, 650
+            }, 750
         )
         setTimeout(
             () => {
                 setLoaderReady(1)
-            }, 200
+            }, 25
         )
     }, [])
 
