@@ -56,7 +56,7 @@ export default function Loader(props) {
             timeline.pause()
             timeline.kill()
             timeline = null
-          }}, 0)
+          }}, 0.33)
           
         }
       }
