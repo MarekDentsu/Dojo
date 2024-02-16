@@ -57,8 +57,7 @@ export default function Carousel(props) {
                         trigger: carouselContainerRef.current,
                         start: "top 90%",
                         end: "bottom 30%",
-                    },
-                    delay: 0.35
+                    }
                 })
                     .from(navRef.current, {
                         y: 60,

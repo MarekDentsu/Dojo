@@ -24,7 +24,7 @@ function Home() {
         setTimeout(
             () => {
                 setLoading(false)
-            }, 750
+            }, 1000
         )
         setTimeout(
             () => {

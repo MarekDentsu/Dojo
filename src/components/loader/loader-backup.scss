@@ -1,0 +1,23 @@
+.loader-container {
+    background-color: black;
+    color: white;
+    overflow: hidden;
+    user-select: none;
+    z-index: 15;
+    position: fixed;
+    top: 0;
+
+    .spiral {
+        width: 100%;
+        height: 100%;
+
+        g{
+            opacity: 0.33;
+        }
+        path{
+            stroke-width: 1px;
+            stroke: white;
+            opacity: 1;
+        }
+    }
+}
