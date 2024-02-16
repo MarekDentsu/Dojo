@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 
-
 export default function Footer(props) {
 
     const footerRef = useRef()
@@ -68,15 +67,17 @@ export default function Footer(props) {
                                 Unleash your innovation. <br />
                                 Create the never before.
                             </h2>
-                            <Button
-                                classes={"white"}
-                                onClick={() => {
-                                    window.location = 'mailto:dojoanz@dentsu.com?subject=Dojo Enquiry'
+                            <Link
+                                to='#'
+                                onClick={(e) => {
+                                    window.location.href = "mailto:dojoanz@dentsu.com?subject=Dojo Enquiry";
+                                    e.preventDefault();
                                 }}
                             >
-                                Dojo with us
-                            </Button>
-
+                                <Button classes={"white"}>
+                                    Dojo with us
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
