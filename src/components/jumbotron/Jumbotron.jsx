@@ -43,12 +43,12 @@ export default function Jumbotron(props) {
             split.revert()
           }
         });
-        gsap.from("button", { // <- selector text, scoped to this component!
-          y: 60,
+        gsap.from("button", { // <- selector text, scoped to this component!\
+          top: 60,
           opacity: 0,
           ease: Power2.easeOut,
           duration: 0.75,
-          delay: 0.75
+          delay: 0.75,
         });
 
         // return () => split.revert(); // context cleanup

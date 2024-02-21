@@ -37,7 +37,7 @@ export default function Footer(props) {
                         stagger: 0.04,
                     })
                     .from("button", { // <- selector text, scoped to this component!
-                        y: 60,
+                        top: 60,
                         opacity: 0,
                         ease: Power2.easeOut,
                         duration: 0.75,

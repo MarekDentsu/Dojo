@@ -6,7 +6,7 @@ export const data = [
             A voice guided cocktail guide with a zesty personality.
             `,
         imageURL: "work/Diageo-Thebar.jpg",
-        videoURL: "work/Diageo-Thebar.mp4"
+        videoURL: "pGSta6PlS9g"
     },
     {
         heading: "Re:Store",
@@ -15,7 +15,7 @@ export const data = [
             A full-service virtual reality dining experience for one of the world’s largest audiences.
             `,
         imageURL: "work/KFC-ReStore.jpg",
-        videoURL: "work/KFC-ReStore.mp4"
+        videoURL: "kgHUPJAQR5I"
     },
     {
         heading: "Inflation Cookbook",
@@ -24,7 +24,7 @@ export const data = [
             A revolutionary tool helping consumers fight the unpredictability of food price inflation.
             `,
         imageURL: "work/Skip-Expresslane-Inflation-CookBook.jpg",
-        videoURL: "work/Skip-Expresslane-Inflation-CookBook.mp4"
+        videoURL: "ZU8GJhAzQo4"
     },
     {
         heading: "Tune the Tuned",
@@ -33,7 +33,7 @@ export const data = [
             Reinvented the way Foot Locker launch a shoe that puts the consumer front and centre. 
             `,
         imageURL: "work/Footlocker.jpg",
-        videoURL: "work/Footlocker.mp4"
+        videoURL: "PmJZXVic_Rk"
     },
     {
         heading: "UMood",
@@ -51,8 +51,9 @@ export const data = [
             An immersive virtual reality showcase that celebrates the depth and diversity of Australia’s Indigenous culture.
             `,
         imageURL: "work/Carriberrie-VR.jpg",
-        videoURL: "work/Carriberrie-VR.mp4"
+        videoURL: "1RtXKU__Cbg"
     },
 ]
 
-
+// Showreel
+// Lw5nPDFo_Y8
